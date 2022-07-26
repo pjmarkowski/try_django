@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h1>About page</h1>
+<p>template</p>
+
+<p>
+    {{ my_text|upper }} <br>
+    {{ my_number }} <br>
+    {{ my_list }} <br>
+    {{ my_html }} <br>
+    {{ my_html|safe }} <br>
+
+
+<ul>
+    {% for my_sub_item in my_list %}
+        {% if my_sub_item == 123%}
+            <li> {{my_sub_item|add:22}}</li>
+        {% elif my_sub_item == 'abc'%}
+            <li> not a number</li>
+        {% else %}
+            <li> {{my_sub_item}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</p>
+{% endblock %}
